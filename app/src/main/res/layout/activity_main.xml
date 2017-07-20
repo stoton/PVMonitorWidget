@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainWidget"
+    android:transitionGroup="true">
+
+    <TextView
+        android:id="@+id/production"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/production"
+        android:textColor="#000000"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/consumption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consumption"
+        android:textColor="#000000"
+        android:layout_margin="35dp"
+        android:textSize="20sp"
+
+        android:layout_alignBaseline="@+id/production"
+        android:layout_alignBottom="@+id/production"
+        android:layout_toEndOf="@+id/production" />
+
+    <TextView
+        android:id="@+id/power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/power"
+        android:textColor="#000000"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="17sp"
+        android:layout_below="@+id/production" />
+
+    <TextView
+        android:id="@+id/efficiency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/efficiency"
+        android:textColor="#000000"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="17sp"
+        android:layout_below="@+id/power"/>
+
+    <TextView
+        android:id="@+id/today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/today"
+        android:textColor="#000000"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="17sp"
+        android:layout_below="@+id/efficiency"/>
+
+    <TextView
+        android:id="@+id/watt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/power"
+        android:layout_below="@id/production"
+        android:textColor="#000000"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="17sp"
+        android:text="5000 W"/>
+
+    <TextView
+        android:id="@+id/effInPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/efficiency"
+        android:layout_below="@id/watt"
+        android:textColor="#000000"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="17sp"
+        android:text="63.9%"/>
+
+    <TextView
+        android:id="@+id/powerToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/today"
+        android:layout_below="@+id/effInPercent"
+        android:textColor="#000000"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="17sp"
+        android:text="20000 Wh"/>
+
+    <TextView
+        android:id="@+id/consumptionWatt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="716W"
+        android:textSize="17sp"
+        android:layout_alignBaseline="@+id/watt"
+        android:layout_alignBottom="@+id/watt"
+        android:layout_alignStart="@+id/consumption" />
+
+    <TextView
+        android:id="@+id/effInPercentConsumption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:text="302%"
+        android:layout_above="@+id/powerToday"
+        android:layout_alignEnd="@+id/consumptionWatt" />
+
+    <TextView
+        android:id="@+id/todayConsumption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:text="21221 Wh"
+        android:layout_alignBaseline="@+id/powerToday"
+        android:layout_alignBottom="@+id/powerToday"
+        android:layout_alignStart="@+id/consumptionWatt" />
+
+    <TextView
+        android:id="@+id/todayFromPV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/todayConsumption"
+        android:textColor="#000000"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="17sp"
+
+        android:text="kd"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Odśwież"
+        android:id="@+id/button"
+        android:layout_marginTop="10dp"
+        android:layout_alignBaseline="@+id/todayFromPV"
+        android:layout_marginLeft="180dp"
+         />
+
+</RelativeLayout>

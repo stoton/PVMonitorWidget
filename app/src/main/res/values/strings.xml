@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pvmonitor-widget</string>
+    <string name="production">produkcja</string>
+    <string name="consumption">pobór</string>
+    <string name="power">moc:</string>
+    <string name="efficiency">wyd:</string>
+    <string name="today">dziś:</string>
+</resources>
