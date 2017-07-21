@@ -22,6 +22,7 @@ public class MainWidget extends AppWidgetProvider {
     private static final String URL = "http://pvmonitor.pl/widget.php?idinst=10143";
     private static final String NUMBER_REGEX = "[0-9]*";
     private static final String UPDATE_ACTION = "update";
+    private static DownloadDataFromWebsite downloadDataFromWebsite;
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -30,7 +31,8 @@ public class MainWidget extends AppWidgetProvider {
             views.setOnClickPendingIntent(R.id.button,
                     getPendingSelfIntent(context, UPDATE_ACTION));
             appWidgetManager.updateAppWidget(appWidgetIds[0], views);
-            new DownloadDataFromWebsite(views, context, appWidgetIds).execute();
+            downloadDataFromWebsite = new DownloadDataFromWebsite(views, context, appWidgetIds);
+            downloadDataFromWebsite.execute();
     }
 
     protected PendingIntent getPendingSelfIntent(Context context, String action) {
@@ -51,7 +53,7 @@ public class MainWidget extends AppWidgetProvider {
         }
     }
 
-    private class DownloadDataFromWebsite extends AsyncTask<Void, Void, Void> {
+    private static class DownloadDataFromWebsite extends AsyncTask<Void, Void, Void> {
         private RemoteViews views;
         private Context context;
         private int[] appWidgetIds;
@@ -154,7 +156,7 @@ public class MainWidget extends AppWidgetProvider {
         }
     }
 
-    private int getMatcherSize(Pattern pattern,  String text) {
+    private static int getMatcherSize(Pattern pattern,  String text) {
         int count = 0;
         Matcher matcher = pattern.matcher(text);
 
